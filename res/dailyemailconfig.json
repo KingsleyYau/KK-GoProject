@@ -1,0 +1,10 @@
+{
+  "username": "usename@163.com",
+  "password": "123",
+  "host": "smtp.qiye.163.com",
+  "toAddress": "to@163.com",
+  "ccAddress": "cc@163.com",
+  "content": "Hello:\\r\\n\\r\\nContent",
+  "subject": "title",
+  "attachment": "test.xls"
+}
