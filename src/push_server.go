@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"pushserver"
 	"strconv"
-	"syscall"
+//	"syscall"
 	"time"
 )
 
@@ -538,21 +538,21 @@ func showclientsHandleFunc(w http.ResponseWriter, r *http.Request) {
 }
 func InitSocket() {
 	// 解除进程打开socket数量限制
-	var rlim syscall.Rlimit
-	err := syscall.Getrlimit(syscall.RLIMIT_NOFILE, &rlim)
-	if err != nil {
-		log.Fatal("获取socket限制失败: " + err.Error())
-	}
-	
-	log.Println("rlim.Cur:", strconv.FormatUint(rlim.Cur, 10))
-	rlim.Cur = 50000
-
-	err = syscall.Setrlimit(syscall.RLIMIT_NOFILE, &rlim)
-	if err != nil {
-		log.Fatal("设置socket限制失败: " + err.Error())
-	}
-	
-	log.Println("rlim.Cur:", strconv.FormatUint(rlim.Cur, 10))
+//	var rlim syscall.Rlimit
+//	err := syscall.Getrlimit(syscall.RLIMIT_NOFILE, &rlim)
+//	if err != nil {
+//		log.Fatal("获取socket限制失败: " + err.Error())
+//	}
+//	
+//	log.Println("rlim.Cur:", strconv.FormatUint(rlim.Cur, 10))
+//	rlim.Cur = 50000
+//
+//	err = syscall.Setrlimit(syscall.RLIMIT_NOFILE, &rlim)
+//	if err != nil {
+//		log.Fatal("设置socket限制失败: " + err.Error())
+//	}
+//	
+//	log.Println("rlim.Cur:", strconv.FormatUint(rlim.Cur, 10))
 
 }
 func main() {
